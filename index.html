@@ -160,7 +160,7 @@ a.telegram-btn{
     <div class="time"><span id="s">00</span><br>Sec</div>
   </div>
 <div class="odds">
-          Weekend combo odds are already posted 🔥 DON’T MISS it
+          Weekend combo odds are already posted (69 odds🔥)  DON’T MISS it
 </div>
   <!-- TELEGRAM CTA -->
   <a class="telegram-btn" href="https://t.me/+ebBUdZIscB43NmZk">
@@ -175,22 +175,27 @@ a.telegram-btn{
 
 <script>
 /* COUNTDOWN – you can remove if not needed */
-const end = new Date("Dec 31, 2025 23:59:59").getTime();
+let t = (1 * 60 * 60 + 59 * 60 + 59) * 1000; // 1hr 59min 59sec
 
-setInterval(()=>{
-  const now = new Date().getTime();
-  const t = end - now;
+setInterval(() => {
 
-  if(t <= 0){
-    document.getElementById("timer").style.display="none";
+  if (t <= 0) {
+    document.getElementById("timer").style.display = "none";
     return;
   }
 
-  d.innerText = Math.floor(t/(1000*60*60*24));
-  h.innerText = Math.floor((t/(1000*60*60))%24);
-  m.innerText = Math.floor((t/(1000*60))%60);
-  s.innerText = Math.floor((t/1000)%60);
-},1000);
+  const h = Math.floor(t / (1000 * 60 * 60));
+  const m = Math.floor((t / (1000 * 60)) % 60);
+  const s = Math.floor((t / 1000) % 60);
+
+  document.getElementById("h").innerText = String(h).padStart(2, "0");
+  document.getElementById("m").innerText = String(m).padStart(2, "0");
+  document.getElementById("s").innerText = String(s).padStart(2, "0");
+
+  t -= 1000;
+
+}, 1000);
+
 </script>
 
 </body>
