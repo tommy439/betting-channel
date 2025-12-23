@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VIP Betting Telegram</title>
+
+<style>
+body{
+  margin:0;
+  font-family:Arial, sans-serif;
+  background:#070b12;
+  color:#ffffff;
+  text-align:center;
+}
+
+.container{
+  padding:40px 15px;
+  max-width:420px;
+  margin:auto;
+}
+
+/* TELEGRAM LOGO */
+.logo{
+  width:70px;
+  height:70px;
+  margin:0 auto 15px;
+  border-radius:50%;
+  background:#229ED9;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:36px;
+}
+
+/* TEXT */
+h1{
+  font-size:26px;
+  margin-bottom:10px;
+}
+
+p{
+  font-size:15px;
+  opacity:0.9;
+}
+
+/* COUNTDOWN */
+.timer{
+  display:flex;
+  justify-content:center;
+  gap:8px;
+  margin:25px 0;
+}
+
+.time{
+  background:#111827;
+  padding:12px;
+  border-radius:6px;
+  min-width:60px;
+}
+
+.time span{
+  font-size:20px;
+  font-weight:bold;
+}
+
+/* BUTTON */
+a.telegram-btn{
+  display:block;
+  background:#229ED9;
+  color:#fff;
+  padding:18px;
+  border-radius:10px;
+  font-size:18px;
+  font-weight:bold;
+  text-decoration:none;
+  margin-top:20px;
+}
+
+/* FOOTER */
+.note{
+  margin-top:30px;
+  font-size:12px;
+  opacity:0.6;
+}
+.score{
+          color: red;
+}
+.odds{
+          color: #229ED9;
+}
+/* RESPONSIVENESS FOR 768px AND BELOW */
+@media (max-width: 768px) {
+          body{
+                    overflow-x: hidden;
+          }
+
+  .container{
+    padding: 30px 12px;
+    max-width: 100%;
+  }
+
+  h1{
+    font-size: 22px;
+  }
+
+  p{
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .logo{
+    width: 60px;
+    height: 60px;
+    font-size: 30px;
+  }
+
+  .timer{
+    gap: 6px;
+    margin: 20px 0;
+  }
+
+  .time{
+    min-width: 55px;
+    padding: 10px;
+  }
+
+  .time span{
+    font-size: 18px;
+  }
+
+  a.telegram-btn{
+    font-size: 16px;
+    padding: 16px;
+  }
+
+  .note{
+    font-size: 11px;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <!-- TELEGRAM LOGO -->
+  <div class="logo">✈</div>
+
+  <h1>VIP Betting Telegram</h1>
+  <p>Daily odds • Higher winning chance <span class="score">100%</span>•&nbsp;   Serious bettors only</p>
+
+  <!-- COUNTDOWN (OPTIONAL) -->
+  <div class="timer" id="timer">
+    <div class="time"><span id="d">00</span><br>Days</div>
+    <div class="time"><span id="h">00</span><br>Hrs</div>
+    <div class="time"><span id="m">00</span><br>Min</div>
+    <div class="time"><span id="s">00</span><br>Sec</div>
+  </div>
+<div class="odds">
+          Weekend combo odds are already posted 🔥 DON’T MISS it
+</div>
+  <!-- TELEGRAM CTA -->
+  <a class="telegram-btn" href="https://t.me/+ebBUdZIscB43NmZk">
+    🚀 JOIN TELEGRAM NOW
+  </a>
+
+  <div class="note">
+    Limited slots • Join before access closes
+  </div>
+
+</div>
+
+<script>
+/* COUNTDOWN – you can remove if not needed */
+const end = new Date("Dec 31, 2025 23:59:59").getTime();
+
+setInterval(()=>{
+  const now = new Date().getTime();
+  const t = end - now;
+
+  if(t <= 0){
+    document.getElementById("timer").style.display="none";
+    return;
+  }
+
+  d.innerText = Math.floor(t/(1000*60*60*24));
+  h.innerText = Math.floor((t/(1000*60*60))%24);
+  m.innerText = Math.floor((t/(1000*60))%60);
+  s.innerText = Math.floor((t/1000)%60);
+},1000);
+</script>
+
+</body>
+</html>
